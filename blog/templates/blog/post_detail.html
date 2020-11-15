@@ -18,6 +18,11 @@
     {% endif %}
     
     <p class='postcontent'>{{ post.text|safe|linebreaksbr}}</p>
+    {% if post.images %}
+        <img class='postimage' src={{ post.images.url }} height=600 width=800>
+    {% endif %}
+    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" 
+        data-numposts="5" data-width=""></div>
     
     {% if user.is_authenticated %}
         <a class='btn btn-primary' href="{% url 'post_edit' pk=post.pk %}">
@@ -38,6 +43,8 @@
     </hr>
     
     <div class="container">
+        
+        
         {% for comment in post.comments.all %}
         <br>
             {% if user.is_authenticated or comment.approved_comment %}

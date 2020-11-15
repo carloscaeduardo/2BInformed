@@ -2,7 +2,8 @@
 
 from django import forms
 from blog.models import Post, Comment
-
+from PIL import Image
+from django.core.files import File
 class PostForm(forms.ModelForm):
     
     class Meta():
@@ -12,7 +13,6 @@ class PostForm(forms.ModelForm):
         widgets = {
                 'title': forms.TextInput(attrs={'class':'textinputclass'}),
                 'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea postcontent'}),
-                
             }        
         
 class CommentForm(forms.ModelForm):
