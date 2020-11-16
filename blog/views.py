@@ -67,33 +67,33 @@ class SearchPostView(ListView):
 ###Comment views###       
 
 @login_required
-def post_publish(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+def post_publish(request, slug):
+    post = get_object_or_404(Post, slug=slug)
     post.publish()
     return redirect('post_list')
 
-def add_comment_to_post(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+def add_comment_to_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('post_detail', slug=post.slug)
     else:
         form = CommentForm()
     return render(request, 'blog/comment_form.html', {'form': form})
 
 @login_required
-def comment_approve(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
+def comment_approve(request, slug):
+    comment = get_object_or_404(Comment, slug=slug)
     comment.approve()
-    return redirect('post_detail', pk=comment.post.pk)
+    return redirect('post_detail', slug=comment.post.slug)
 
 @login_required
-def comment_remove(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
-    post_pk = comment.post.pk
+def comment_remove(request, slug):
+    comment = get_object_or_404(Comment, slug=slug)
+    post_slug = comment.post.slug
     comment.delete()
-    return redirect('post_detail', pk=post_pk)
+    return redirect('post_detail', slug=post_slug)
