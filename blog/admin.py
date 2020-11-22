@@ -1,18 +1,20 @@
 from django.contrib import admin
-from blog.models import Post, Comment
+from blog.models import Post
 from blog import models
+from mediumeditor.admin import MediumEditorAdmin
 
 # Register your models here.
 
 
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(MediumEditorAdmin, admin.ModelAdmin):
     """  
     
     """
-    fields=['title', 'author', 'created_date','publication_date', 'images', 'text']
+    fields=['title', 'author','subject', 'created_date','publication_date','snippet_image',  'text' ]
     search_fields = ['title']
-    
+    mediumeditor_fields = ('my_text_field', )
+
+
     
 admin.site.register(models.Post, PostAdmin)
-admin.site.register(models.Comment)

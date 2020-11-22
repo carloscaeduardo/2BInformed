@@ -1,70 +1,60 @@
 {% extends "base.html" %}
 
 {% block content%}
-    
-    <h1 class="posttitle loader">{{post.title}}</h1>
-    {% if post.publication_date %}
-        <div class="date postdate">
-            {{ post.publication_date }}
-        </div>
-    {% else %}
+    <script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+    {{ block.super }}
+    <div class="content container editable">
+        <h1 class="posttitle loader">{{post.title}}</h1>
+        {% if post.publication_date %}
+            <div class="date postdate">
+                {{ post.publication_date }}
+            </div>
+        {% else %}
+            {% if user.is_authenticated %}
+                <h1>This post is not published yet</h1>
+                <a class='btn btn-primary' href="{% url 'post_publish' slug=post.slug %}">
+                  POST
+                </a>
+                
+            {% endif %}
+             
+        {% endif %}
+        
+        <p class='postcontent'>{{ post.text|safe|linebreaksbr}}</p>
+        {% if post.header_image %}
+            <img class='postimage1' src={{ post.header_image.url }} height=600 width=800>
+            <img class='postimage2' src={{ post.second_image.url }} height=600 width=800>
+            <img class='postimage3' src={{ post.third_image.url }} height=600 width=800>
+       
+        {% endif %}
+        
+        
+            
         {% if user.is_authenticated %}
-            <h1>This post is not published yet</h1>
-            <a class='btn btn-primary' href="{% url 'post_publish' slug=post.slug %}">
-              POST
+            <a class='btn btn-primary' href="{% url 'post_edit' slug=post.slug %}">
+                <i class='far fa-edit' ></i>
             </a>
             
+            <a class='btn btn-primary' href="{% url 'post_remove' slug=post.slug %}">
+                <i class='far fa-trash-alt' ></i>
+            </a>
+            
+        
+        
         {% endif %}
-         
-    {% endif %}
-    
-    <p class='postcontent'>{{ post.text|safe|linebreaksbr}}</p>
-    {% if post.images %}
-        <img class='postimage' src={{ post.images.url }} height=600 width=800>
-    {% endif %}
-    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" 
-        data-numposts="5" data-width=""></div>
-    
-    {% if user.is_authenticated %}
-        <a class='btn btn-primary' href="{% url 'post_edit' slug=post.slug %}">
-            <i class='far fa-edit' ></i>
-        </a>
         
-        <a class='btn btn-primary' href="{% url 'post_remove' slug=post.slug %}">
-            <i class='far fa-trash-alt' ></i>
-        </a>
+            <p>this is the post slug: post/{{post.slug}}</p>
+            
+            <div class="fb-like" data-href="http://127.0.0.1:8000/post/{{ post.slug }}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+            
+            <div class="fb-comments" data-href="http://127.0.0.1:8000/post/{{ post.slug }}" 
+            data-numposts="5" data-width="">
         
+            </div>
     
-    
-    {% endif %}
-    
-    <hr>
-    <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' slug=post.slug %}">Add comment</a>
-    
-    </hr>
-    
-    <div class="container">
+    </div>
         
         
-        {% for comment in post.comments.all %}
-        <br>
-            {% if user.is_authenticated or comment.approved_comment %}
-                {{ comment.created_date }}
-                    {% if not comment.approved_comment %}
-                        <a class='btn btn-default' href="{% url 'comment_remove' slug=comment.slug %}">
-                            <i class='far fa-trash-alt' ></i>
-                        </a>
-                        <a class='btn btn-primary' href="{% url 'comment_approve' slug=comment.slug%}">
-                            <i class='far fa-check-circle' ></i>
-                        </a>
-                
-                    {% endif %}
-                    
-                <p>{{comment.text|safe|linebreaksbr}}</p>
-                <p> Posted by: {{comment.author}}</p>
-            {% endif %}
-            {% empty %}
-            <p>No comments yet.</p>
-        {% endfor %}
+       
 
 {% endblock %}

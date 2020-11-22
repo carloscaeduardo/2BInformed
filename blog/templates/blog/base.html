@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 {% load static %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 <html>
     <head>
        
@@ -11,12 +13,8 @@
         <!-- bootstrap   -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    
         
-    
-        <!-- medium style editor  -->
-        <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
-    
         <!-- Custom CSS -->  
         <link rel="stylesheet" href="{% static 'css/blog.css' %}"
         
@@ -31,12 +29,17 @@
     <!-- Facebook Comments -->
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0" nonce="rmiTgShI"></script>
+    
+    <!-- Facebook likes -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0" nonce="e8SaJUso"></script>
+    
     <!-- navbar -->
          
             <nav class="navbar navbar-expand-md navbar-light bg-dark">
                   <a class="mybrand" href="/">
                       <div class="mylogo-image">
-                          <img src= "{% static 'images/logo_size_invert4.png'  %}"  alt="" width= '120' height="50">
+                          <img src= "{% static 'images/logo_size_invert4.png'  %}"  alt="" width= "240" height="100">
                       </div>
                   </a>
 
@@ -53,7 +56,7 @@
                     <ul class='nav navbar-nav navbar-right'>
                         {% if user.is_authenticated %}
                             <li>
-                                <a class='nav navbar-right' href="{% url 'post_new' %}">New Post</a>
+                                <a class='nav navbar-right' href="{% url 'admin:index' %}">Enter Admin page</a>
                             </li>
                             <li>
                                 <a class='nav navbar-right' href="{% url 'post_draft_list' %}">Drafts</a>
@@ -100,6 +103,36 @@
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            <div class="container">
+                {% if user.is_authenticated %}
+                    <table>
+                        <tr>  
+                            <td>
+                                <p><a href="{% url 'admin:index' %}">Enter Admin page</a></p>
+                            </td>
+                            <td>
+                                <p><a  href="{% url 'post_draft_list' %}">Drafts</a></p>
+                            </td>
+                            <td>
+                                <p><a  href="{% url 'logout' %}">Logout</a></p>
+                            </td>
+                            
+                        </tr>
+                    </table>
+                   
+                {% else %}
+                    <table>
+                        <td>
+                            <p><a href="{% url 'login' %}">Login</a></p>
+                        </td>
+                        
+                    </table>    
+                        
+
+                {% endif %}
+            </div>
+        </footer>
     </div>
     
     

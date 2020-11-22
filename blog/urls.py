@@ -18,9 +18,6 @@ urlpatterns = [
     path('drafts/', views.DraftListView.as_view(), name='post_draft_list'),
     path('post/<slug>/remove/', views.PostDeleteView.as_view(), name='post_remove'),
     path('post/<slug>/publish/', views.post_publish, name='post_publish'),
-    path('post/<slug>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
-    path('comment/<slug>/approve/', views.comment_approve, name='comment_approve'),
-    path('comment/<slug>/remove/', views.comment_remove, name='comment_remove'),
     path('post/<urlsearch>/', views.SearchPostView.as_view(), name='searchfromurl'),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

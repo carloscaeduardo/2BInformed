@@ -1,15 +1,17 @@
 from django.shortcuts import (render, get_object_or_404, redirect)
 from django.utils import timezone
-from blog.models import (Post, Comment)
+from blog.models import (Post)
 from django.views.generic import (TemplateView,
                                   ListView, DetailView, 
                                   CreateView, UpdateView,
                                   DeleteView,
                                         )
-from blog.forms import (PostForm, CommentForm)
+from blog.forms import (PostForm, )
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+from django.forms import formset_factory
+
 
 
 
@@ -64,7 +66,6 @@ class SearchPostView(ListView):
             queryset = Post.object.none()
         return queryset
     
-###Comment views###       
 
 @login_required
 def post_publish(request, slug):
@@ -72,28 +73,3 @@ def post_publish(request, slug):
     post.publish()
     return redirect('post_list')
 
-def add_comment_to_post(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.save()
-            return redirect('post_detail', slug=post.slug)
-    else:
-        form = CommentForm()
-    return render(request, 'blog/comment_form.html', {'form': form})
-
-@login_required
-def comment_approve(request, slug):
-    comment = get_object_or_404(Comment, slug=slug)
-    comment.approve()
-    return redirect('post_detail', slug=comment.post.slug)
-
-@login_required
-def comment_remove(request, slug):
-    comment = get_object_or_404(Comment, slug=slug)
-    post_slug = comment.post.slug
-    comment.delete()
-    return redirect('post_detail', slug=post_slug)
