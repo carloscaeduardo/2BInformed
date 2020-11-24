@@ -85,54 +85,66 @@
                 </nav>
             </div>
     <!-- navbar end -->
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
+    
+    <div class="grid-container inline-grid">
+        
+                <div class="header">
+                    <h1>header</h1>
+                </div>
+                <div class="left-side-menu">
+                    <p>menu</p>
+                </div>
+                <div class ="right">
+                    <p>Right class asdhfldasj fkl</p>
+                </div>
+                
                 <div class="blog_post">
     
     
-                {%block content%}
-    
-    
-    
-  
-    
-    
-    
-                {% endblock %}
+                    {%block content%}
+        
+        
+        
+      
+        
+        
+        
+                    {% endblock %}
+                    
                 </div>
-            </div>
-        </div>
-        <footer class="footer">
-            <div class="container">
-                {% if user.is_authenticated %}
-                    <table>
-                        <tr>  
+            
+       
+        
+            <footer class="footer">
+                <div class="container">
+                    {% if user.is_authenticated %}
+                        <table>
+                            <tr>  
+                                <td>
+                                    <p><a href="{% url 'admin:index' %}">Enter Admin page</a></p>
+                                </td>
+                                <td>
+                                    <p><a  href="{% url 'post_draft_list' %}">Drafts</a></p>
+                                </td>
+                                <td>
+                                    <p><a  href="{% url 'logout' %}">Logout</a></p>
+                                </td>
+                                
+                            </tr>
+                        </table>
+                       
+                    {% else %}
+                        <table>
                             <td>
-                                <p><a href="{% url 'admin:index' %}">Enter Admin page</a></p>
-                            </td>
-                            <td>
-                                <p><a  href="{% url 'post_draft_list' %}">Drafts</a></p>
-                            </td>
-                            <td>
-                                <p><a  href="{% url 'logout' %}">Logout</a></p>
+                                <p><a href="{% url 'login' %}">Login</a></p>
                             </td>
                             
-                        </tr>
-                    </table>
-                   
-                {% else %}
-                    <table>
-                        <td>
-                            <p><a href="{% url 'login' %}">Login</a></p>
-                        </td>
-                        
-                    </table>    
-                        
-
-                {% endif %}
-            </div>
-        </footer>
+                        </table>    
+                            
+                    {% endif %}
+                </div>
+            </footer>
+        
     </div>
     
     

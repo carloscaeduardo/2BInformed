@@ -1,29 +1,37 @@
 {% extends "base.html" %}
 
-{% block content%}
-<div class="centerstage">
-    <h1>View all posts:</h1>
-
-    {% for post in post_list %}
-    <div class="post">
-        <h1><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h1>
-        <img class="snippet_image" src="{{ post.snippet_image.url }}">
-        <div class="date">
-            <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
-        </div>
-        
-        
-   
-        
-    </div>
+{% block content %}
     
-    {% endfor %}
-
-
-
-
+        <h1>View all posts:</h1>
         
-</div>
+           <table>
+                {% for post in post_list %}
+                <tr class="{% cycle 'row1' 'row2' %}">
+                           
+                        <div class="post_snippet">
+                        
+                        
+                              
+                            <a href="{% url 'post_detail' slug=post.slug %}"><img class="snippet_image" src="{{ post.snippet_image.url }}"></a>
+                            <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+                            <div class="date">
+                                <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
+                            </div>
+                        
+                        </div>
+                  </tr>
+              </table>
+       
+            
+      
+        
+        {% endfor %}
+    
+    
+
+
+      
+    </div>
 
 
 
