@@ -4,26 +4,11 @@
 }
 
 
-
-
-
-.blog_post{
-    { grid-area: main }
-
-.left-side-menu{
-     grid-area: Menu
-
-         
-         
-}
-
-}
-
 .snippet_image{
     border-radius: 16px;
     height: 400px;
     
-   
+  
 }
 
 .post_snippet{
@@ -31,6 +16,7 @@
     border-radius: 16px;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:  rgb(255,255,255);
 }
 
 .grid-container {
@@ -44,10 +30,11 @@
   padding: 10px;
   grid-template-rows: auto;
    grid-template-columns: 15% 35% 20%;
+   background-color:  rgb(128,128,128);
 }
 
 .grid-container > div {
-  background-color: #f1f1f1	;
+  background-color: #dee2e6	;
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
@@ -61,6 +48,7 @@
 }
 .blog_post{
     grid-area: main;
+    background-color:  #dee2e6;
     
     
         }
@@ -70,6 +58,7 @@
 
 .left-side-menu{
     grid-area:menu;
+    background-color: rgb(0,128,128);
 }
 .footer {
     grid-area: footer;
@@ -85,4 +74,14 @@
 .post-title{
 
 
+}
+
+.facebook-icon{
+    padding-right: 30px;
+    
+}
+
+.middle{
+    padding-left: 300px;
+    
 }

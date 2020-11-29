@@ -2,36 +2,20 @@
 
 {% block content %}
     
-        <h1>View all posts:</h1>
+        <h1>All Posts:</h1>
         
-           <table>
-                {% for post in post_list %}
-                <tr class="{% cycle 'row1' 'row2' %}">
-                           
-                        <div class="post_snippet">
-                        
-                        
-                              
-                            <a href="{% url 'post_detail' slug=post.slug %}"><img class="snippet_image" src="{{ post.snippet_image.url }}"></a>
-                            <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
-                            <div class="date">
-                                <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
-                            </div>
-                        
+            {% for post in post_list %}
+                <div class="post_snippet">
+                
+                        <a href="{% url 'post_detail' slug=post.slug %}"><img class="snippet_image" src="{{ post.snippet_image.url }}"></a>
+                        <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+                        <div class="date">
+                            <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
                         </div>
-                  </tr>
-              </table>
-       
-            
-      
-        
-        {% endfor %}
-    
-    
 
-
-      
-    </div>
+                </div>
+            {% endfor %}
+    
 
 
 
