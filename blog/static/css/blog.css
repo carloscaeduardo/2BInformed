@@ -7,8 +7,8 @@
 .snippet_image{
     border-radius: 16px;
     height: 400px;
-    
-  
+
+
 }
 
 .post_snippet{
@@ -49,8 +49,8 @@
 .blog_post{
     grid-area: main;
     background-color:  #dee2e6;
-    
-    
+
+
         }
 .right{
     grid-area: right;
@@ -62,7 +62,7 @@
 }
 .footer {
     grid-area: footer;
-   
+
     bottom: 0;
     left: 0 ;
     width: 100%;
@@ -78,10 +78,19 @@
 
 .facebook-icon{
     padding-right: 30px;
-    
+
 }
 
 .middle{
     padding-left: 300px;
-    
+
+}
+
+.content{
+    text-align: center;
+}
+
+.post_content_full{
+
+    text-align: left;
 }

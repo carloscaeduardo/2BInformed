@@ -35,7 +35,7 @@
 
 .grid-container > div {
   background-color: #dee2e6	;
-  text-align: center;
+
   padding: 20px 0;
   font-size: 30px;
   height: auto;
@@ -84,9 +84,4 @@
 .middle{
     padding-left: 300px;
 
-}
-
-.post_content_full{
-
-    text-align: left;
 }
