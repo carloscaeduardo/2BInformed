@@ -41,6 +41,7 @@
   height: auto;
   grid-auto-flow: column;
   grid-auto-columns: auto;
+  grid-template-columns: 200px 400px 300px;
 }
 
 .header{
