@@ -5,23 +5,24 @@
 <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 <html>
     <head>
-       
+
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"
         <title></title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
         <!-- bootstrap   -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    
-        
-        <!-- Custom CSS -->  
+
+
+        <!-- Custom CSS -->
         <link rel="stylesheet" href="{% static 'css/blog.css' %}"
-        
+
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        
-        
+
+
         <!-- Google Fonts-->
 
     </head>
@@ -29,13 +30,13 @@
     <!-- Facebook Comments -->
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0" nonce="rmiTgShI"></script>
-    
+
     <!-- Facebook likes -->
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0" nonce="e8SaJUso"></script>
-    
+
     <!-- navbar -->
-         
+
             <nav class="navbar navbar-expand-md navbar-light bg-dark">
                   <a class="mybrand" href="/">
                       <div class="mylogo-image">
@@ -50,7 +51,7 @@
                       </li>
                       <li class="nav-item">
                       <!--  <a class="nav-link" href="{% url 'about' %}">About</a> -->
-                      
+
                     </ul>
                     <!--
                     <ul class='nav navbar-nav navbar-right'>
@@ -72,18 +73,18 @@
                                 <a class='nav navbar-right' href="{% url 'login' %}">Login</i>
 
                                 </a>
-                            </li>    
-                        
+                            </li>
+
 
                         {% endif %}
-                    </ul>  
-                    --> 
+                    </ul>
+                    -->
                         <a class="facebook-icon" href="https://www.facebook.com/2B-Informed-105990491355575" target="_blank" title= "2B-Informed on facebook" >
                             <i class="fab fa-facebook-square fa-3x" >
                             </i>
                         </a>
-                        
-                        
+
+
                     <!-- <form class="form-inline my-2 my-lg-0">
                       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -92,9 +93,9 @@
                 </nav>
             </div>
     <!-- navbar end -->
-    
+    <p>This shit should be fking red</p>
     <div class="grid-container inline-grid">
-        
+
                 <div class="header">
                     <h1>header</h1>
                 </div>
@@ -104,29 +105,29 @@
                 <div class ="right">
                     <p>Right class asdhfldasj fkl</p>
                 </div>
-                
+
                 <div class="blog_post">
-    
-    
+
+
                     {%block content%}
-        
-        
-        
-      
-        
-        
-        
+
+
+
+
+
+
+
                     {% endblock %}
-                    
+
                 </div>
-            
-       
-        
+
+
+
             <footer class="footer">
                 <div class="container">
                     {% if user.is_authenticated %}
                         <table>
-                            <tr>  
+                            <tr>
                                 <td>
                                     <p><a href="{% url 'admin:index' %}">Enter Admin page</a></p>
                                 </td>
@@ -136,30 +137,30 @@
                                 <td>
                                     <p><a  href="{% url 'logout' %}">Logout</a></p>
                                 </td>
-                                
+
                             </tr>
                         </table>
-                       
+
                     {% else %}
                         <table>
                             <td>
                                 <p><a href="{% url 'login' %}">Login</a></p>
                             </td>
-                            
-                        </table>    
-                            
+
+                        </table>
+
                     {% endif %}
                 </div>
             </footer>
-        
+
     </div>
-    
-    
+
+
     <!-- bootstrap -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <!-- bootstrap -->
 
-  
+
     </body>
 </html>
