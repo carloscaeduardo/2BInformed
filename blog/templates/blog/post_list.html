@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-    
-        <h1>All Posts:</h1>
-        
-            {% for post in post_list %}
-                <div class="post_snippet">
-                
-                        <a href="{% url 'post_detail' slug=post.slug %}"><img class="snippet_image" src="{{ post.snippet_image.url }}"></a>
-                        <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
-                        <div class="date">
-                            <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
-                        </div>
 
-                </div>
-            {% endfor %}
-    
+        <h1>All Posts:</h1>
+            <section class="row">
+                {% for post in post_list %}
+                    <div class="post_snippet col-xl-4 col-lg-6 col-sm-12">
+
+                            <a href="{% url 'post_detail' slug=post.slug %}"><img class="snippet_image" src="{{ post.snippet_image.url }}"></a>
+                            <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+                            <div class="date">
+                                <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
+                            </div>
+
+                    </div>
+                {% endfor %}
+            </section>
 
 
 
