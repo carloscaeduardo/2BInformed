@@ -2,20 +2,94 @@
 
 {% block content %}
 
-        <h1>All Posts:</h1>
+    <div class="container-fluid">
+
+        <div class="upper-ad col-lg-12 col-sm-12">
+            <h4>Advertisement</h4>
+            <hr>
+            <a href="https://www.presearch.org/signup?rid=1256771" target="_blank">
+              <img class="PreSearch-add" src="https://presearch.org/images/rf/ban-4.jpg" title="Presearch" alt="presearch" />
+            </a>
+
+        </div>
+
+    </div>
+    <div id="latest-posts" class="latest-posts col-lg-12 col-sm-12 ">
+        <!-- Use only the first 5 posts-->
+            <h1>Latest</h1>
             <section class="row">
+
                 {% for post in post_list %}
-                    <div class="post_snippet col-xl-4 col-lg-6 col-sm-12">
 
-                            <a href="{% url 'post_detail' slug=post.slug %}"><img class="snippet_image" src="{{ post.snippet_image.url }}"></a>
-                            <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
-                            <div class="date">
-                                <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
-                            </div>
 
-                    </div>
+                        <div class="post_snippet col-xl-6 col-lg-6 col-sm-12">
+
+                                <a href="{% url 'post_detail' slug=post.slug %}"><img class="latest-snippet_image" src="{{ post.snippet_image.url }}"></a>
+                                <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+                                <div class="date">
+                                    <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
+                                </div>
+
+                        </div>
+
                 {% endfor %}
+
             </section>
+    </div>
+
+   <div class="top-articles col-xl-6 col-lg-6 col-sm-12">
+
+        <!-- Use only the latest 2 posts-->
+
+        <section class="row">
+            {% for post in post_list %}
+                <div class="post_snippet col-xl-6 col-lg-6 col-sm-12">
+
+                    <a href="{% url 'post_detail' slug=post.slug %}"><img class="top-articles-snippet_image" src="{{ post.snippet_image.url }}"></a>
+                    <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+                    <div class="date">
+                        <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
+                    </div>
+
+                </div>
+             {% endfor %}
+        </section>
+
+    </div>
+    <div id="popular-posts" class="popular-posts middle-right-ad col-xl-3 col-lg-3 col-sm-12">
+                <h4>Popular</h4>
+                <hr>
+
+    </div>
+
+    <div id="right-side-advertisement" class="corner-right-ad col-xl-3 col-lg-3 col-sm-12">
+        <h4>Advertisement</h4>
+        <hr>
+        <a href="https://go.hotmart.com/S46156652I" rel="nofollow">
+            <img src="http://celke.com.br/img_hotmart/88928/curso-de-php-mysqli-e-bootstrap.jpg" border="0" width="250" height="250" />
+        </a>
+    </div>
+    <div class="trending-articles col-xl-6 col-lg-6 col-sm-12">
+
+        <!-- Use only the 3 most viewd of the week posts-->
+
+        <section class="row">
+            {% for post in post_list %}
+                <div class="post_snippet col-xl-4 col-lg-6 col-sm-12">
+
+                    <a href="{% url 'post_detail' slug=post.slug %}"><img class="trending-snippet_image" src="{{ post.snippet_image.url }}"></a>
+                    <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+                    <div class="date">
+                        <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
+                    </div>
+
+                </div>
+             {% endfor %}
+        </section>
+
+    </div>
+
+
 
 
 
