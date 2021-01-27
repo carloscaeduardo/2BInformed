@@ -2,92 +2,93 @@
 
 {% block content %}
 
-    <div class="container-fluid">
 
-        <div class="upper-ad col-lg-12 col-sm-12">
-            <h4>Advertisement</h4>
+    <div id="latest-posts" class="latest-posts col-xxl-12 col-xl-12 col-lg-12 col-sm-12 ">
+        <!-- Use only the first 5 posts-->
+
+            <section class="row">
+                <div class="container post-slick">
+
+                        {% for post in post_list|slice:":5" %}
+                            <div class="post-tile post-snippet-latest">
+                                <a href="{% url 'post_detail' slug=post.slug %}">
+                                    <div class="shadow">
+                                        <img id="latest-snippet_image" class="latest-snippet_image img-responsive" src="{{ post.snippet_image.url }}">
+                                    </div>
+                                    <span class="post-date-created">{{post.publication_date}}</span>
+                                    <span class="post-title">{{ post.title }}</span>
+
+                                </a>
+                            </div>
+
+                        {% endfor %}
+
+
+                </div>
+
+            </section>
+    </div>
+     <div class="container-fluid">
+
+        <div class="upper-ad col-xxl-12 col-lg-12 col-sm-12">
             <hr>
+            <p class="Ad-title">Advertisement</p>
             <a href="https://www.presearch.org/signup?rid=1256771" target="_blank">
-              <img class="PreSearch-add" src="https://presearch.org/images/rf/ban-4.jpg" title="Presearch" alt="presearch" />
+              <img class="PreSearch-add img-responsive" src="https://presearch.org/images/rf/ban-4.jpg" title="Presearch" alt="presearch" />
             </a>
 
         </div>
 
     </div>
-    <div id="latest-posts" class="latest-posts col-lg-12 col-sm-12 ">
-        <!-- Use only the first 5 posts-->
-            <h1>Latest</h1>
-            <section class="row">
 
-                {% for post in post_list %}
-
-
-                        <div class="post_snippet col-xl-6 col-lg-6 col-sm-12">
-
-                                <a href="{% url 'post_detail' slug=post.slug %}"><img class="latest-snippet_image" src="{{ post.snippet_image.url }}"></a>
-                                <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
-                                <div class="date">
-                                    <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
-                                </div>
-
-                        </div>
-
-                {% endfor %}
-
-            </section>
-    </div>
-
-   <div class="top-articles col-xl-6 col-lg-6 col-sm-12">
-
+   <div class="top-articles col-xxl-9 col-xl-9 col-lg-9 col-sm-12">
+        <div class="top-articles-call"><h3><i class="fas fa-star"></i>Trending</h3></div>
+        <hr class="style2">
         <!-- Use only the latest 2 posts-->
 
         <section class="row">
-            {% for post in post_list %}
-                <div class="post_snippet col-xl-6 col-lg-6 col-sm-12">
-
-                    <a href="{% url 'post_detail' slug=post.slug %}"><img class="top-articles-snippet_image" src="{{ post.snippet_image.url }}"></a>
-                    <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
-                    <div class="date">
-                        <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
+            {% for post in post_list|slice:":6" %}
+                <div class="post-tile-trending post_snippet col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
+                    <a href="{% url 'post_detail' slug=post.slug %}"><img class="top-articles-snippet_image img-responsive" src="{{ post.snippet_image.url }}"></a>
+                    <div class="trending-title-box">
+                        <span class="post-title-trending">{{ post.title }}</span>
                     </div>
+                    <div class="shadow"></div>
 
                 </div>
              {% endfor %}
         </section>
 
     </div>
-    <div id="popular-posts" class="popular-posts middle-right-ad col-xl-3 col-lg-3 col-sm-12">
-                <h4>Popular</h4>
-                <hr>
+    <div id="popular-posts" class="popular-posts middle-right-ad col-xxl-3 col-xl-3 col-lg-3 col-sm-12">
+                <div class="popular-call"><h3><i class="fas fa-fire"></i>Popular</h3></div>
+                <hr class="style2">
 
     </div>
-
-    <div id="right-side-advertisement" class="corner-right-ad col-xl-3 col-lg-3 col-sm-12">
-        <h4>Advertisement</h4>
+    <div id="middle-advertisement" class="corner-right-ad col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
         <hr>
+        <p class="Ad-title">Advertisement</p>
         <a href="https://go.hotmart.com/S46156652I" rel="nofollow">
-            <img src="http://celke.com.br/img_hotmart/88928/curso-de-php-mysqli-e-bootstrap.jpg" border="0" width="250" height="250" />
+            <img class="img-responsive" src="https://celke.com.br/img_hotmart/88928/curso-de-php-mysqli-e-bootstrap.jpg" border="0" width="250" height="250" />
         </a>
     </div>
-    <div class="trending-articles col-xl-6 col-lg-6 col-sm-12">
+
+    <div class="trending-articles col-xxl-9 col-xl-9 col-lg-9 col-sm-12">
 
         <!-- Use only the 3 most viewd of the week posts-->
 
         <section class="row">
             {% for post in post_list %}
-                <div class="post_snippet col-xl-4 col-lg-6 col-sm-12">
-
-                    <a href="{% url 'post_detail' slug=post.slug %}"><img class="trending-snippet_image" src="{{ post.snippet_image.url }}"></a>
-                    <h2 class="post-title"><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
-                    <div class="date">
-                        <p>Published on: {{ post.publication_date|date:"D M Y"}}</p>
-                    </div>
-
+                <div class="post-tile post_snippet_trending col-xxl-3 col-xl-3 col-lg-3 col-sm-12">
+                    <a href="{% url 'post_detail' slug=post.slug %}"><img class="trending-snippet_image img-responsive" src="{{ post.snippet_image.url }}"></a>
+                    <div class="shadow"></div>
+                    <span class="post-title-more">{{ post.title }}</span>
                 </div>
              {% endfor %}
         </section>
 
     </div>
+
 
 
 

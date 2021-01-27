@@ -8,13 +8,13 @@ from mediumeditor.admin import MediumEditorAdmin
 
 
 class PostAdmin(MediumEditorAdmin, admin.ModelAdmin):
-    """  
-    
+    """
+
     """
     fields=['title', 'author','subject', 'created_date','publication_date','snippet_image',  'text' ]
     search_fields = ['title']
     mediumeditor_fields = ('my_text_field', )
 
 
-    
+
 admin.site.register(models.Post, PostAdmin)
