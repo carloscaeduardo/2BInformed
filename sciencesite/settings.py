@@ -123,14 +123,30 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/kurosuzume/science_site/static'
+STATIC_ROOT = '/home/2BInformed/2BInformed/static'
 
 
 
 LOGIN_REDIRECT_URL = '/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT =  '/home/kurosuzume/science_site/media'
+MEDIA_ROOT =  '/home/2BInformed/2BInformed/media'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = True
+
+CKEDITOR_CONFIGS = {
+    'default':{
+        'toolbar': 'Custom',
+        'height': 500,
+        'toolbar_Custom': [
+            ['Styles','Format','Bold','Italic', 'Underline', 'Strike', 'SpellChecker','Undo'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Table', 'HorizontalRule'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'], ['Source', 'CodeSnippet', 'Youtube'],
+        ],
+        'extraPlugins':','.join([ 'codesnippet', 'youtube']),
+    },
+}
+

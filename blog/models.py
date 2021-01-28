@@ -18,7 +18,16 @@ from hitcount.models import HitCount
 class Post(models.Model, HitCountMixin):
     author = models.ForeignKey('auth.User',on_delete=models.CASCADE)
     title = models.CharField(max_length = 200)
-    text = RichTextUploadingField()
+    text = RichTextUploadingField(config_name='default',
+                external_plugin_resources=[(
+                                                'youtube',
+                   '/static/ckeditor/ckeditor/plugins/youtube/',
+                                                'plugin.js',
+
+                                                            )]
+                                                                )
+
+
     snippet_image = models.ImageField(blank = True, null = True, help_text={"use images in 3x2 proportion!" })
     created_date = models.DateTimeField(default = timezone.now)
     publication_date = models.DateTimeField(blank = True, null=True)
