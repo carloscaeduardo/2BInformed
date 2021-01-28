@@ -138,6 +138,7 @@ CKEDITOR_RESTRICT_BY_USER = True
 CKEDITOR_CONFIGS = {
     'default':{
         'toolbar': 'Custom',
+        'allowedContent': True,
         'height': 500,
         'toolbar_Custom': [
             ['Styles','Format','Bold','Italic', 'Underline', 'Strike', 'SpellChecker','Undo'],
