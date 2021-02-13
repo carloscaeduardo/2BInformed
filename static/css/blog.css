@@ -6,6 +6,7 @@
     padding: 0;
 }
 
+
 body{
     background-color: #B0B7C0;
 
@@ -60,18 +61,38 @@ hr.style3 {
 }
 
 /* Make img rotation effect */
-/*.rotate img{*/
-/*transition: 1s ease;*/
-/*}*/
+.img-rotate {
+  transition: 0.10s;
+  -webkit-transition: 0.10s;
+  -moz-transition: 0.10s;
+  -ms-transition: 0.10s;
+  -o-transition: 0.10s;
 
-/*.rotate img:hover{*/
-/*-webkit-transform: rotateZ(-10deg);*/
-/*-ms-transform: rotateZ(-10deg);*/
-/*transform: rotateZ(-10deg);*/
-/*transition: 1s ease;*/
-/*}*/
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
 
+.img-rotate:hover {
 
+  transition: 0.10s;
+  -webkit-transition: 0.10s;
+  -moz-transition: 0.10s;
+  -ms-transition: 0.10s;
+  -o-transition: 0.10s;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  clip: rect(0px,60px,200px,0px);
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
 
 span.post-crated-date {
     position:relative;
@@ -91,8 +112,9 @@ span.post-title {
 
 .post-tile-trending {
     position:relative;
-    color: #fff;
     margin-bottom: 15px;
+    background-color:#BFC5CC;
+    padding: 0px;
 }
 
 
@@ -145,6 +167,7 @@ img.trending-snippet_image {
 
 .shadow-trending{
     position: relative;
+    padding: 0;
 
 }
 
@@ -441,7 +464,7 @@ footer{
     }
 
     span.post-date-created{
-        padding-left: 15px;
+        padding-left: 25px;
         padding-bottom:5px;
         font-size:1.0em;
         line-height:70%;
@@ -452,7 +475,18 @@ footer{
 
     }
     span.post-date-created-trending{
-        padding-left: 10px;
+        padding-left: 15px;
+        padding-bottom:5px;
+        font-size:1.0em;
+        line-height:70%;
+        bottom:100px;
+        position:absolute;
+        float:left;
+        color:#fff;
+
+    }
+    span.post-date-created-more{
+        padding-left: 15px;
         padding-bottom:0px;
         font-size:0.80em;
         line-height:70%;
@@ -464,13 +498,13 @@ footer{
     }
 
     span.post-title{
-        padding: 15px;
+        padding: 25px;
         font-size: 35px;
         line-height:100%;
         bottom:15px;
         position:absolute;
         float:left;
-        height:55px;
+        height:65px;
 
     }
 
@@ -480,12 +514,12 @@ footer{
         line-height:70%;
         color: #fff;
         position:absolute;
-        bottom: 10px;
+        bottom: 70px;
 
     }
 
     span.post-title-more{
-        padding: 10px;
+        padding: 15px;
         font-size: 18px;
         line-height:70%;
         color: #fff;
@@ -498,6 +532,10 @@ footer{
         width:550px;
 
     }
+    .shadow-trending{
+        width:450px;
+    }
+
     .shadow-trending::after{
     width: 450px;
 
@@ -516,9 +554,11 @@ footer{
     }
 
     .post-tile-trending{
-        width:480px;
+        width:450px;
+        height:360px;
         margin-right:20px;
         margin-bottom:20px;
+
     }
 
     .post-snippet-more{

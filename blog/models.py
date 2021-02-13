@@ -32,7 +32,8 @@ class Post(models.Model, HitCountMixin):
     created_date = models.DateTimeField(default = timezone.now)
     publication_date = models.DateTimeField(blank = True, null=True)
     slug = models.SlugField(allow_unicode=True, unique = True)
-    subject = models.CharField(max_length= 200, blank = True, null = True)
+    subject = models.CharField(max_length= 80, blank = True, null = True)
+    introduction = models.CharField(max_length = 200, blank=True, null = True)
     hit_count_generic = GenericRelation(
         MODEL_HITCOUNT, object_id_field='slug',
         related_query_name='hit_count_generic_relation')

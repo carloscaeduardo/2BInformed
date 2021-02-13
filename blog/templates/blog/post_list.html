@@ -23,8 +23,8 @@
                         {% for post in post_list|slice:":5" %}
                             <div class="post-tile post-snippet-latest">
                                 <a href="{% url 'post_detail' slug=post.slug %}">
-                                    <div class="shadow">
-                                        <img id="latest-snippet_image" class="latest-snippet_image img-responsive" src="{{ post.snippet_image.url }}">
+                                    <div class="shadow img-rotate">
+                                        <img id="latest-snippet_image" class="latest-snippet_image img-rotate zoom img-responsive" src="{{ post.snippet_image.url }}">
                                     </div>
                                     <span class="post-date-created">{{ post.publication_date|date:"D M Y" }}</span>
                                     <span class="post-title">{{ post.title }}</span>
@@ -52,15 +52,17 @@
                 <div class="post-tile-trending post_snippet col-xxl-6 col-xl-6 col-lg-6 col-sm-6">
 
                     <a href="{% url 'post_detail' slug=post.slug %}">
-                        <div class="shadow-trending">
-                            <img class="top-articles-snippet_image img-responsive" src="{{ post.snippet_image.url }}">
+                        <div class="shadow-trending img-rotate ">
+                            <img class="top-articles-snippet_image img-rotate img-responsive" src="{{ post.snippet_image.url }}">
                         </div>
                     </a>
                     <div class="trending-title-box">
-                        <span class="post-date-created">{{ post.publication_date|date:"D M Y" }}</span>
+                        <span class="post-date-created-trending">{{ post.publication_date|date:"D M Y" }}</span>
                         <span class="post-title-trending">{{ post.title }}</span>
                     </div>
-
+                    <div class="post-trending-intro">
+                        <p>{{ post.introduction }}</p>
+                    </div>
 
                 </div>
              {% endfor %}
@@ -90,11 +92,11 @@
             {% for post in post_list|slice:"6:" %}
                 <div class="post-tile post-snippet-more col-xxl-4 col-xl-4 col-lg-4 col-sm-4">
                     <a href="{% url 'post_detail' slug=post.slug %}">
-                    <div class="shadow-more">
-                        <img class="trending-snippet_image img-responsive" src="{{ post.snippet_image.url }}">
+                    <div class="shadow-more img-rotate">
+                        <img class="trending-snippet_image img-responsive " src="{{ post.snippet_image.url }}">
                     </div>
                     </a>
-                    <span class="post-date-created-trending">{{ post.publication_date|date:"D M Y" }}</span>
+                    <span class="post-date-created-more">{{ post.publication_date|date:"D M Y" }}</span>
                     <span class="post-title-more">{{ post.title }}</span>
 
                 </div>
