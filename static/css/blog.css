@@ -1,4 +1,4 @@
-/*** Base styles ***/
+*** Base styles ***/
 
 *{
     box-sizing: border-box!important;
@@ -9,6 +9,11 @@
 body{
     background-color: #B0B7C0;
 
+}
+
+.right-side-icons{
+    position:absolute;
+    right: 150px;
 }
 
 .upper-ad{
@@ -31,8 +36,14 @@ body{
 
 .post-tile.post-snippet-latest{
     position: relative;
-    border: 2px solid black;
-    overflow: hidden;
+
+
+}
+
+
+
+.post-snippet-more{
+    position:relative;
 
 }
 
@@ -40,6 +51,12 @@ hr.style2 {
     width:100%;
 	border-top: 4px double #8c8b8b;
     margin-bottom: 5px;
+}
+hr.style3 {
+    width:98%;
+	border-top: 4px double #8c8b8b;
+    margin-bottom: 5px;
+    padding-left: 10px;
 }
 
 /* Make img rotation effect */
@@ -56,29 +73,57 @@ hr.style2 {
 
 
 
+span.post-crated-date {
+    position:relative;
+    width:60%;
+    color:#fff;
+    float:left;
+}
 
-
-span.post-title{
-    position: absolute;
-    bottom:0;
+span.post-title {
+    position: relative;
     width:60%;
     color: #fff;
+    float: left;
+    overflow: hidden;
 
 }
 
-post-tile-trending{
+.post-tile-trending {
     position:relative;
-    width:60%;
     color: #fff;
+    margin-bottom: 15px;
 }
 
 
 span.trending-title-box{
     position:absolute;
     bottom: 0;
-    left:5;
+    left:0px;
+}
+
+
+img.latest-snippet_image {
+        margin-left: auto;
+        margin-right: auto;
+        object-fit:cover;
+}
+
+img.top-articles-snippet_image {
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
 
 }
+
+
+img.trending-snippet_image {
+    margin-left: auto;
+    margin-right: auto;
+    object-fit:cover;
+
+}
+
 
 .shadow{
     position: relative;
@@ -94,8 +139,46 @@ span.trending-title-box{
     position: absolute;
     right: 0;
     top: 0;
-    width: 100%;
+
 }
+
+
+.shadow-trending{
+    position: relative;
+
+}
+
+.shadow-trending::after{
+    box-shadow:  0 0 80px 30px #000 inset;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+}
+
+.shadow-more{
+    position: relative;
+    text-align: center;
+}
+.shadow-more::after {
+    box-shadow:  0 0 60px 30px #000 inset;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
 
 .upper-ad{
 
@@ -122,9 +205,12 @@ hr{
     .corner-right-ad{
     padding-bottom:30px;
 
-    }
+}
 
-
+.right-side-ad-1{
+    margin: auto;
+    display:block;
+}
 
 
 
@@ -134,24 +220,87 @@ hr{
 
 /* Footer */
 footer{
-    position:fixed;
-    left:0;
+    margin-top:30px;
     bottom:0;
-    width:80%;
-    box-sizing: border-box;
+    width:100%;
+    background-color: #212529;
+   text-align: center;
 }
 
+.footer-table{
+    border-collapse: separate;
+    table-layout:auto;
+    width: 100%;
+    margin-top: 0px;
+    color: #fff;
+    padding:25px;
+    line-height: 0.8;
 
+}
 
+.footer-table a{
+    color: #fff;
+
+}
+.footer-table a:link{
+
+    text-decoration:none;
+}
+
+.footer-table td{
+    width:33%;
+}
+
+.footer-container{
+    margin-left:0px;
+    padding-left:15px;
+}
 
 
 /* MEDIA SIZES */
 
 
-}
+
 
 /* Media small size */
 @media (min-width: 576px){
+    img.latest-snippet_image {
+        width:400px;
+        height:300px;
+        box-sizing: border-box;
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+    img.top-articles-snippet_image{
+        width:300px;
+    }
+    img.trending-snippet_image{
+        width:200px ;
+    }
+    span.post-date-created{
+        float:left;
+        font-size:0.6em;
+        bottom:60px;
+
+    }
+
+    span.post-date-created-trending{
+        float:left;
+        font-size:0.4em;
+        bottom:40px;
+
+    }
+
+
+    span.post-title{
+
+        bottom:40px;
+        padding-left:2px;
+        float:left;
+        width:100%;
+
+    }
 
 }
 
@@ -244,28 +393,36 @@ footer{
 
 /* Media extra-Large size */
 @media (min-width: 1400px){
+
+    li.nav-item.active.middle{
+    margin-left:400px;
+    }
+
+
     .post-slick{
         height:400px;
+        width:1200px;
     }
 
     img.latest-snippet_image {
-        width: 600px;
+        width: 550px;
         height:400px;
-        box-sizing: border-box;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right:25px;
+
     }
 
     img.top-articles-snippet_image {
-        width: 500px;
-        height:300px;
-        box-sizing: border-box;
+        width: 450px;
+        height:280px;
+
+
     }
 
 
     img.trending-snippet_image {
-        width: 200px;
-        box-sizing: border-box;
+        width: 300px;
+        height:200px;
+
 
     }
 
@@ -279,20 +436,118 @@ footer{
     .post-snippet-latest{
         width:600px;
         height:400px;
-        margin-right: 25px;
+        margin-right: 0;
 
     }
+
+    span.post-date-created{
+        padding-left: 15px;
+        padding-bottom:5px;
+        font-size:1.0em;
+        line-height:70%;
+        bottom:50px;
+        position:absolute;
+        float:left;
+        color:#fff;
+
+    }
+    span.post-date-created-trending{
+        padding-left: 10px;
+        padding-bottom:0px;
+        font-size:0.80em;
+        line-height:70%;
+        bottom:40px;
+        position:absolute;
+        float:left;
+        color:#fff;
+
+    }
+
     span.post-title{
         padding: 15px;
-        font-size: 40px;
-        line-height:70%;
+        font-size: 35px;
+        line-height:100%;
+        bottom:15px;
+        position:absolute;
+        float:left;
+        height:55px;
+
     }
 
     span.post-title-trending{
         padding: 15px;
-        font-size: 20px;
+        font-size: 25px;
         line-height:70%;
         color: #fff;
+        position:absolute;
+        bottom: 10px;
+
+    }
+
+    span.post-title-more{
+        padding: 10px;
+        font-size: 18px;
+        line-height:70%;
+        color: #fff;
+        position:absolute;
+        bottom: 10px;
+
+    }
+
+    .shadow{
+        width:550px;
+
+    }
+    .shadow-trending::after{
+    width: 450px;
+
+    }
+
+    .shadow-more{
+        width:300px;
+    }
+    .slick-list{
+
+    }
+
+
+    .post-slick{
+        margin-bottom:26px;
+    }
+
+    .post-tile-trending{
+        width:480px;
+        margin-right:20px;
+        margin-bottom:20px;
+    }
+
+    .post-snippet-more{
+        margin-bottom: 15px;
+    }
+
+    .Presearch-add{
+        width:1400px;
+    }
+
+    p.Ad-title{
+        font-size:1.0em;
+        padding-top: 7px;
+    }
+
+    .popular-posts{
+        border: 5px solid #cbccc4;
+        height: 1000px;
+        box-sizing: border-box;
+    }
+
+    .picpay{
+        width: 600px;
+        height: 200px;
+        margin-left:auto;
+        margin-right:auto;
+        display: block;
+        margin-top: 5px;
+        margin-bottom:0px;
     }
 
 

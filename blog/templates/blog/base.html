@@ -44,6 +44,7 @@
                   </a>
 
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active middle">
                         <a class="nav-link" href="/"><i class="fa fa-atom fa-3x"></i><span class="sr-only">(current)</span></a>
@@ -52,12 +53,12 @@
                       <!--  <a class="nav-link" href="{% url 'about' %}">About</a> -->
 
                     </ul>
-
-                        <a class="facebook-icon" href="https://www.facebook.com/2B-Informed-105990491355575" target="_blank" title= "2B-Informed on facebook" >
+                    <div class="right-side-icons">
+                        <a class="facebook-icon" href="https://www.facebook.com/2BInformedOfficial" target="_blank" title= "2B-Informed on facebook" >
                             <i class="fab fa-facebook-square fa-3x" >
                             </i>
                         </a>
-
+                    </div>
 
                     <!-- <form class="form-inline my-2 my-lg-0">
                       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -84,20 +85,29 @@
 
 
         </section>
-        <footer class="footer">
-            <div class="container">
+
+    </div>
+
+    <footer class="footer">
+            <div class="container footer-container">
                 {% if user.is_authenticated %}
                     <table>
                         <tr>
                             <td>
                                 <p><a href="{% url 'admin:index' %}">Enter Admin page</a></p>
                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <p><a  href="{% url 'post_draft_list' %}">Drafts</a></p>
                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <p><a  href="{% url 'logout' %}">Logout</a></p>
                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <p> Hit counts {{ hitcount }}</p>
                             </td>
@@ -105,17 +115,33 @@
                     </table>
 
                 {% else %}
-                    <table>
-                        <td>
-                            <p><a href="{% url 'login' %}">Login</a></p>
-                        </td>
-
+                    <table class="footer-table">
+                        <tr>
+                            <td><a href="{% url 'login' %}"><p>Navegação</p></a></td>
+                            <td><a href="{% url 'login' %}"><p>Contato</p></a></td>
+                            <td><a href="{% url 'login' %}"><p>Legal</p></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/"><p>Página inicial</p></a></td>
+                            <td><a href="/"><p>Envie Noticias</p></a></td>
+                            <td><a href="/"><p>Termos de Uso</p></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/"><p>Sobre nós</p></a></td>
+                            <td><a href="/"><p>Contato</p></a></td>
+                            <td><a href="/"><p>Política de Privacidade</p></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="{% url 'login' %}">ADM Login</a></td>
+                            <td></td>
+                            <td><a href="/"><p>Política de Cookies</p></a></td>
+                        </tr>
                     </table>
+
 
                 {% endif %}
             </div>
         </footer>
-    </div>
 
 
     <!-- JQuery and bootstrap JS -->

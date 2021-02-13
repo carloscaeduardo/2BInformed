@@ -12,8 +12,9 @@ class PostAdmin(MediumEditorAdmin, admin.ModelAdmin):
 
     """
     fields=['title', 'author','subject', 'created_date','publication_date','snippet_image',  'text' ]
-    search_fields = ['title']
+    search_fields = ['title', 'subject']
     mediumeditor_fields = ('my_text_field', )
+    list_display = ['title', 'author','subject', 'created_date','publication_date' ]
 
 
 

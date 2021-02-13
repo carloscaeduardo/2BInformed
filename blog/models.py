@@ -17,7 +17,7 @@ from hitcount.models import HitCount
 
 class Post(models.Model, HitCountMixin):
     author = models.ForeignKey('auth.User',on_delete=models.CASCADE)
-    title = models.CharField(max_length = 200)
+    title = models.CharField(max_length = 35, help_text={"Only up to 35 characters allowed"})
     text = RichTextUploadingField(config_name='default',
                 external_plugin_resources=[(
                                                 'youtube',
