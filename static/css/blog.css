@@ -12,9 +12,32 @@ body{
 
 }
 
+a{
+    text-decoration:none;
+}
+
+.fa, .fab, .fas{
+    color:#fff;
+}
+
+i.fas.fa-star, i.fas.fa-fire, i.fas.fa-gem{
+    color: black;
+}
+
+.nav-link{
+    float:left;
+}
+
+#navbarSupportedContent > ul{
+    display: table;
+    margin: 0 10%;
+    color: #fff;
+    list-style-type: none;
+}
+
 .right-side-icons{
     position:absolute;
-    right: 150px;
+
 }
 
 .upper-ad{
@@ -29,6 +52,30 @@ body{
 .latest-posts{
     margin-top:30px;
 }
+
+.post-latest-subject{
+    background-color:#fff;
+
+}
+
+.Aprenda{
+    background-color:#6699ff;
+}
+.Popular{
+    background-color:#e6e600;
+}
+.cripto-moedas{
+    background-color:  #e0e0d1;
+}
+
+.Plantas .e .Animais{
+    background-color: #336600;
+}
+.Genoma{
+
+}
+
+
 
 
 .post-slick{
@@ -45,8 +92,20 @@ body{
 
 .post-snippet-more{
     position:relative;
+    background-color:#BFC5CC;
+    padding:0;
+    margin-left:15px;
+
 
 }
+
+ .post-trending-intro{
+        color: black;
+    }
+.post-more-intro{
+        color: black;
+    }
+
 
 hr.style2 {
     width:100%;
@@ -115,6 +174,10 @@ span.post-title {
     margin-bottom: 15px;
     background-color:#BFC5CC;
     padding: 0px;
+}
+
+p{
+    text-decoration: none;
 }
 
 
@@ -378,58 +441,34 @@ footer{
 }
 
 
-/* Media extra-Large size */
+/* Media extra - Large size */
 @media (min-width: 1200px){
 
 
-    img.latest-snippet_image {
-        width: 500px;
-        box-sizing: border-box;
-
+ .subjects-list{
+        margin-left:10%;
+        width: 600px;
     }
-
-    img.top-articles-snippet_image {
-        width: 280px;
-        box-sizing: border-box;
-    }
-
-    .popular-posts{
-        border: 5px solid #cbccc4;
-        height: 1200px;
-        box-sizing: border-box;
-    }
-
-
-
-    img.trending-snippet_image {
-        width: 200px;
-        box-sizing: border-box;
-    }
-
-    .corner-right-ad{
-
-        box-sizing: border-box;
-    }
-
-
-}
-
-/* Media extra-Large size */
-@media (min-width: 1400px){
 
     li.nav-item.active.middle{
-    margin-left:400px;
+    margin-left:300px;
+    }
+
+    .right-side-icons{
+
+        right: 50px;
+        margin-top:10px;
+        color: #fff;
     }
 
 
     .post-slick{
         height:400px;
-        width:1200px;
+        width:1000px;
     }
 
     img.latest-snippet_image {
-        width: 550px;
-        height:400px;
+        width: 450px;
         margin-right:25px;
 
     }
@@ -490,7 +529,7 @@ footer{
         padding-bottom:0px;
         font-size:0.80em;
         line-height:70%;
-        bottom:40px;
+        bottom:75px;
         position:absolute;
         float:left;
         color:#fff;
@@ -524,7 +563,228 @@ footer{
         line-height:70%;
         color: #fff;
         position:absolute;
-        bottom: 10px;
+        bottom: 45px;
+
+    }
+
+    .shadow{
+        width:450px;
+
+    }
+    .shadow-trending{
+        width:450px;
+    }
+
+    .shadow-trending::after{
+    width: 450px;
+
+    }
+
+    .shadow-more{
+        width:300px;
+    }
+    .slick-list{
+
+    }
+
+
+    .post-slick{
+        margin-bottom:26px;
+    }
+
+    .post-tile-trending{
+        width:450px;
+        height:360px;
+        margin-right:20px;
+        margin-bottom:20px;
+
+    }
+    .post-trending-intro{
+        font-size: 1.0 em;
+    }
+    .post-more-intro{
+        font-size:0.8em;
+    }
+
+    .post-snippet-more{
+        margin-bottom: 15px;
+        width:300px;
+        height: 250px;
+    }
+
+    .Presearch-add{
+        width:1400px;
+    }
+
+    p.Ad-title{
+        font-size:1.0em;
+        padding-top: 7px;
+    }
+
+    .popular-posts{
+        border: 5px solid #cbccc4;
+        height: 1200px;
+        box-sizing: border-box;
+    }
+
+    .picpay{
+        width: 600px;
+        height: 200px;
+        margin-left:auto;
+        margin-right:auto;
+        display: block;
+        margin-top: 5px;
+        margin-bottom:0px;
+    }
+
+    #right-bottom-advertisement{
+        position:relative;
+        bottom: 230px;
+    }
+
+
+}
+
+/* Media extra-extra-Large size */
+@media (min-width: 1400px){
+    .subjects-list{
+        margin-left:20%;
+        width: 600px;
+    }
+
+    li.nav-item.active.middle{
+    margin-left:400px;
+    }
+
+    .right-side-icons{
+
+        right: 150px;
+        margin-top:10px;
+        color: #fff;
+    }
+    .post-slick{
+        height:400px;
+        width:1200px;
+    }
+
+    img.latest-snippet_image {
+        width: 550px;
+        height:400px;
+        margin-right:25px;
+
+    }
+
+    img.top-articles-snippet_image {
+        width: 450px;
+        height:280px;
+
+
+    }
+
+
+    img.trending-snippet_image {
+        width: 300px;
+        height:200px;
+
+
+    }
+
+    .corner-right-ad{
+
+
+
+        box-sizing: border-box;
+    }
+
+    .post-snippet-latest{
+        width:600px;
+        height:400px;
+        margin-right: 0;
+
+    }
+
+    span.post-date-created{
+        padding-left: 25px;
+        padding-bottom:5px;
+        font-size:1.0em;
+        line-height:70%;
+        bottom:65px;
+        position:absolute;
+        float:left;
+        color:#fff;
+
+    }
+
+    .post-latest-subject{
+        text-align: right;
+        padding-left: 10px;
+        padding-right:15px;
+        padding-bottom:0px;
+        padding-top:5px;
+        font-size:1.0em;
+        line-height:70%;
+        bottom:0px;
+        left:19px;
+        position:absolute;
+        float:left;
+        color:black;
+        width: 550px;
+        font-size:1.5em;
+        height: 1.1em;
+
+    }
+
+    span.post-date-created-trending{
+        padding-left: 15px;
+        padding-bottom:5px;
+        font-size:1.0em;
+        line-height:70%;
+        bottom:100px;
+        position:absolute;
+        float:left;
+        color:#fff;
+
+    }
+    span.post-date-created-more{
+        padding-left: 15px;
+        padding-bottom:0px;
+        font-size:0.80em;
+        line-height:70%;
+        bottom:75px;
+        position:absolute;
+        float:left;
+        color:#fff;
+
+    }
+
+    span.post-title{
+        padding: 25px;
+        font-size: 35px;
+        line-height:100%;
+        bottom:30px;
+        position:absolute;
+        float:left;
+        height:65px;
+
+    }
+
+    span.post-title-trending{
+        padding: 15px;
+        font-size: 25px;
+        line-height:70%;
+        color: #fff;
+        position:absolute;
+        bottom: 70px;
+
+    }
+
+    span.post-title-more{
+        padding: 15px;
+        font-size: 18px;
+        line-height:70%;
+        color: #fff;
+        position:absolute;
+        bottom: 45px;
 
     }
 
@@ -560,9 +820,17 @@ footer{
         margin-bottom:20px;
 
     }
+    .post-trending-intro{
+        font-size: 1.0 em;
+    }
+    .post-more-intro{
+        font-size:0.8em;
+    }
 
     .post-snippet-more{
         margin-bottom: 15px;
+        width:300px;
+        height: 250px;
     }
 
     .Presearch-add{
@@ -576,7 +844,7 @@ footer{
 
     .popular-posts{
         border: 5px solid #cbccc4;
-        height: 1000px;
+        height: 1200px;
         box-sizing: border-box;
     }
 
@@ -588,6 +856,11 @@ footer{
         display: block;
         margin-top: 5px;
         margin-bottom:0px;
+    }
+
+    #right-bottom-advertisement{
+        position:relative;
+        bottom: 230px;
     }
 
 
