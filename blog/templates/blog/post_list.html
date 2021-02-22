@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container-fluid">
 
-        <div class="upper-ad col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
+        <div class="upper-ad col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-xs-12">
             <hr>
             <p class="Ad-title">Anúncio</p>
             <a href="https://www.presearch.org/signup?rid=1256771" target="_blank">
@@ -14,7 +14,7 @@
 
     </div>
 
-    <div id="latest-posts" class="latest-posts col-xxl-12 col-xl-12 col-lg-12 col-sm-12 ">
+    <div id="latest-posts" class="latest-posts col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-xs-12 ">
         <!-- Use only the first 5 posts-->
 
             <section class="row">
@@ -42,14 +42,14 @@
     </div>
 
 
-   <div class="top-articles col-xxl-9 col-xl-9 col-lg-9 col-sm-12">
+   <div class="top-articles col-xxl-9 col-xl-9 col-lg-9 col-sm-12 col-xs-12">
         <div class="top-articles-call"><h3><i class="fas fa-star"></i>Em Alta</h3></div>
         <hr class="style2">
         <!-- Use only the latest 2 posts-->
 
         <section class="row">
             {% for post in post_list|slice:":6" %}
-                <div class="post-tile-trending post_snippet col-xxl-6 col-xl-6 col-lg-6 col-sm-6">
+                <div class="post-tile-trending post_snippet col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
                     <a class="post-trendig-link" href="{% url 'post_detail' slug=post.slug %}">
                         <div class="shadow-trending img-rotate ">
@@ -60,6 +60,8 @@
                             <span class="post-date-created-trending">{{ post.publication_date|date:"D M Y" }}</span>
                             <span class="post-title-trending">{{ post.title }}</span>
                         </div>
+                        <div class="post-trending-subject {{post.subject}}">{{ post.subject }}</div>
+
                         <div class="post-trending-intro">
                             <p>{{ post.introduction }}</p>
                         </div>
@@ -70,12 +72,12 @@
         </section>
 
     </div>
-    <div id="popular-posts" class="popular-posts middle-right-ad col-xxl-3 col-xl-3 col-lg-3 col-sm-12">
+    <div id="popular-posts" class="popular-posts middle-right-ad col-xxl-3 col-xl-3 col-lg-3 col-sm-12 col-xs-12">
                 <div class="popular-call"><h3><i class="fas fa-fire"></i>Populares</h3></div>
                 <hr class="style2">
 
     </div>
-    <div id="middle-advertisement" class="corner-right-ad col-xxl-9 col-xl-9 col-lg-9 col-sm-12">
+    <div id="middle-advertisement" class="corner-right-ad col-xxl-9 col-xl-9 col-lg-9 col-sm-12 col-xs-12">
         <hr>
         <p class="Ad-title">Anúncio</p>
         <a href="http://www.picpay.com/convite?@LNRCWM" rel="nofollow" target="_blank">
@@ -83,7 +85,7 @@
         </a>
     </div>
 
-    <div class="trending-articles col-xxl-9 col-xl-9 col-lg-9 col-sm-12">
+    <div class="trending-articles col-xxl-9 col-xl-9 col-lg-9 col-sm-12 col-xs-12">
 
         <!-- Use only the 3 most viewd of the week posts-->
 
@@ -91,7 +93,7 @@
             <div class="top-articles-call"><h3><i class="fas fa-gem"></i>Mais Notícias</h3></div>
             <hr class="style3">
             {% for post in post_list|slice:"6:" %}
-                <div class="post-tile post-snippet-more col-xxl-4 col-xl-4 col-lg-4 col-sm-4">
+                <div class="post-tile post-snippet-more col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <a href="{% url 'post_detail' slug=post.slug %}">
                         <div class="shadow-more img-rotate">
                             <img class="trending-snippet_image img-responsive " src="{{ post.snippet_image.url }}">
@@ -99,7 +101,10 @@
                         </div>
                         <span class="post-date-created-more">{{ post.publication_date|date:"D M Y" }}</span>
                         <span class="post-title-more">{{ post.title }}</span>
+                        <div class="post-more-subject {{post.subject}}">{{ post.subject }}</div>
+
                         <div class="post-more-intro">
+
                             <p>{{ post.introduction }}</p>
                         </div>
                     </a>
@@ -112,7 +117,7 @@
 
     </div>
 
-    <div id="right-bottom-advertisement" class="right-bottom-ad col-xxl-3 col-xl-3 col-lg-3 col-sm-3">
+    <div id="right-bottom-advertisement" class="right-bottom-ad col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
         <hr>
 
         <p class="Ad-title">Anúncio</p>

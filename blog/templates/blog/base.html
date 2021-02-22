@@ -43,13 +43,15 @@
                           <img src= "{% static 'images/2Binformed_logo_max.png'  %}"  alt="" width= "240" height="100">
                       </div>
                   </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+                      <ul class="navbar-nav mr-auto">
 
-                      <ul class="nav-item active middle">
-
-                            <li class="subjects-list">
+                            <li class="nav-item active subjects-list">
                                 <a class="nav-link" href="/" title="Ciência"><i class="fa fa-atom fa-3x"></i><span class="sr-only">(current)</span></a>
                                 <a class="nav-link" href="/" title="Meio-Ambiente"><i class="fab fa-envira fa-3x"></i><span class="sr-only">(current)</span></a>
                                 <a class="nav-link" href="/" title="Espacial"><i class="fas fa-user-astronaut fa-3x"></i><span class="sr-only">(current)</span></a>
@@ -57,27 +59,10 @@
                                 <a class="nav-link" href="/" title="Plantas e Animais"><i class="fas fa-paw fa-3x"></i><span class="sr-only">(current)</span></a>
                                 <a class="nav-link" href="/" title="Cripto-moedas"><i class="fab fa-btc fa-3x"></i><span class="sr-only">(current)</span></a>
                                 <a class="nav-link" href="/" title="Aprenda a Usar o Celular"> <i class="fas fa-mobile-alt fa-3x"></i><span class="sr-only">(current)</span></a>
-                                <div class="right-side-icons">
-                                    <a class="facebook-icon" href="https://www.facebook.com/2BInformedOfficial" target="_blank" title= "2B-Informed on Facebook" >
-                                        <i class="fab fa-facebook-square fa-3x" >
-                                        </i>
-                                    </a>
 
-
-                                    <a class="instagram-icon" href="#" target="_blank" title= "2B-Informed on Instagram" >
-                                        <i class="fab fa-instagram fa-3x" >
-                                        </i>
-                                    </a>
-
-
-                                    <a class="instagram-icon" href="#" target="_blank" title= "2B-Informed on Twitter" >
-                                        <i class="fab fa-twitter fa-3x" >
-                                        </i>
-                                    </a>
-                                </div>
                             </li>
 
-                      </ul>
+                        </ul>
 
 
                       <li class="nav-item">
@@ -89,7 +74,25 @@
                       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form> -->
-                  </div>
+                    </div>
+                    <div class="right-side-icons">
+                        <a class="facebook-icon" href="https://www.facebook.com/2BInformedOfficial" target="_blank" title= "2B-Informed on Facebook" >
+                            <i class="fab fa-facebook-square fa-3x" >
+                            </i>
+                        </a>
+
+
+                        <a class="instagram-icon" href="#" target="_blank" title= "2B-Informed on Instagram" >
+                            <i class="fab fa-instagram fa-3x" >
+                            </i>
+                        </a>
+
+
+                        <a class="instagram-icon" href="#" target="_blank" title= "2B-Informed on Twitter" >
+                            <i class="fab fa-twitter fa-3x" >
+                            </i>
+                        </a>
+                    </div>
                 </nav>
             </div>
     <!-- navbar end -->
@@ -166,7 +169,7 @@
 
                 {% endif %}
             </div>
-        </footer>
+    </footer>
 
 
     <!-- JQuery and bootstrap JS -->
