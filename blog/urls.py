@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 
 
-        
+
 urlpatterns = [
     path('',views.PostListView.as_view(),name='post_list'),
     path('about/',views.AboutView.as_view(),name='about'),
