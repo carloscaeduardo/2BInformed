@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container-fluid">
 
+    <div class="container-fluid">
+        <h1>Hello World</h1>
         <div class="upper-ad col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-xs-12">
             <hr>
             <p class="Ad-title">Anúncio</p>
@@ -19,21 +20,23 @@
 
             <section class="row">
                 <div class="container post-slick">
-
                         {% for post in post_list|slice:":5" %}
+                            {% if {{post.subject}} == "Genoma" %}
                             <div class="post-tile post-snippet-latest">
                                 <a href="{% url 'post_detail' slug=post.slug %}">
                                     <div class="shadow img-rotate">
                                         <img id="latest-snippet_image" class="latest-snippet_image img-rotate zoom img-responsive" src="{{ post.snippet_image.url }}">
                                     </div>
-                                    <span class="post-date-created">{{ post.publication_date|date:"d M Y" }}</span>
+                                    <span class="post-date-created">{{ post.publication_date|date:"D M Y" }}</span>
                                     <span class="post-title">{{ post.title }}</span>
                                     <div class="post-latest-subject {{post.subject}}">{{ post.subject }}</div>
 
                                 </a>
                             </div>
-
+                            {% else %}
+                            {% endif %}
                         {% endfor %}
+
 
 
                 </div>
@@ -57,7 +60,7 @@
                         </div>
 
                         <div class="trending-title-box">
-                            <span class="post-date-created-trending">{{ post.publication_date|date:"d M Y" }}</span>
+                            <span class="post-date-created-trending">{{ post.publication_date|date:"D M Y" }}</span>
                             <span class="post-title-trending">{{ post.title }}</span>
                         </div>
                         <div class="post-trending-subject {{post.subject}}">{{ post.subject }}</div>
@@ -99,7 +102,7 @@
                             <img class="trending-snippet_image img-responsive " src="{{ post.snippet_image.url }}">
 
                         </div>
-                        <span class="post-date-created-more">{{ post.publication_date|date:"d M Y" }}</span>
+                        <span class="post-date-created-more">{{ post.publication_date|date:"D M Y" }}</span>
                         <span class="post-title-more">{{ post.title }}</span>
                         <div class="post-more-subject {{post.subject}}">{{ post.subject }}</div>
 

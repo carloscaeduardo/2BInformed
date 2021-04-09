@@ -28,6 +28,10 @@ class PostListView(ListView):
     def get_queryset(self):
         return Post.objects.filter(publication_date__lte=timezone.now()).order_by('-publication_date')
 
+class PostSubjectView(TemplateView):
+    model = Post
+    template_name = "post_subject.html"
+
 
 class PostDetailView(HitCountDetailView):
     model = Post
