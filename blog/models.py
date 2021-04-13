@@ -31,7 +31,10 @@ class Post(models.Model, HitCountMixin):
     created_date = models.DateTimeField(default = timezone.now)
     publication_date = models.DateTimeField(blank = True, null=True)
     slug = models.SlugField(allow_unicode=True, unique = True)
-    subject = models.CharField(max_length= 80, blank = True, null = True)
+    subject = models.CharField(max_length= 80, choices =  [
+    ('Ciências','Ciências'), ('Meio-Ambiente','Meio-Ambiente'), ('Genoma','Genoma'),
+    ('Cripto-moedas','Cripto-moedas'), ('Aprenda a Usar o Celular','Aprenda a Usar o Celular'),
+    ('Plantas e Animais','Plantas e Animais'), ('Espacial','Espacial')] )
     introduction = models.CharField(max_length = 200, blank=True, null = True)
     hit_count_generic = GenericRelation(
         MODEL_HITCOUNT, object_id_field='slug',
