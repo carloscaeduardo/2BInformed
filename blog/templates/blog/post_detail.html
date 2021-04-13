@@ -9,7 +9,7 @@
             <h1 class="posttitle loader">{{post.title}}</h1>
             {% if post.publication_date %}
                 <div class="date postdate">
-                    {{ post.publication_date|date "d M Y" }}
+                    {{ post.publication_date }}
                 </div>
             {% else %}
                 {% if user.is_authenticated %}
